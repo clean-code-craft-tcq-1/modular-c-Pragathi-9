@@ -25,7 +25,9 @@ const char* MinorColorNames[] =
 };
 
 //should the max be 25?
-const int MAX_COLORPAIR_NAME_CHARS = 16;
+const int MAX_COLORPAIR_NAME_CHARS = 25;
+const int MIN_COLORPAIR_NAME_CHARS = 1;
+
 
 //no. of minor colors
 int numberOfMinorColors = sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
@@ -39,9 +41,9 @@ void ColorPairToString(const ColorPair* colorPair, char* buffer)
 }
 
 ColorPair GetColorFromPairNumber(int pairNumber)
-{	if (pairNumber>25 || pairNumber<1)
+{	if (pairNumber>MAX_COLORPAIR_NAME_CHARS || pairNumber<MIN_COLORPAIR_NAME_CHARS)
 	{
-		printf("Come back when sober") //hidden req
+		printf("Come back when sober"); //hidden req
 	}
 	else
 	{
@@ -61,7 +63,7 @@ int GetPairNumberFromColor(const ColorPair* colorPair)
 void testNumberToPair(int pairNumber, enum MajorColor expectedMajor, enum MinorColor expectedMinor)
 {
     ColorPair colorPair = GetColorFromPairNumber(pairNumber);
-    char colorPairNames[];
+    char colorPairNames[MAX_COLORPAIR_NAME_CHARS];
     ColorPairToString(&colorPair, colorPairNames);
     printf("Got pair %s\n", colorPairNames);
     assert(colorPair.majorColor == expectedMajor);
@@ -80,14 +82,14 @@ void testPairToNumber(enum MajorColor major, enum MinorColor minor, int expected
 
 void reference_manual()
 {
-	ColorPair colorPair;
+	ColorPair Pair;
 	int numberpair = 1;
-	printf(" PAIRNUMBER \t\t\t\t\t MAJORCOLOR-MINORCOLOR ")
+	printf(" PAIRNUMBER \t\t\t\t\t MAJORCOLOR-MINORCOLOR ");
 	while (numberpair <= MAX_COLORPAIR_NAME_CHARS)
 	{
-		ColorPair colorPair = GetColorFromPairNumber(numberpair);
+		ColorPair Pair = GetColorFromPairNumber(numberpair);
 		
-		printf(" %d \t\t\t\t\t %s-%s ",numberpair,MajorColorNames[colorPair->majorColor], MinorColorNames[colorPair->minorColor])
+		printf(" %d \t\t\t\t\t %s-%s ",numberpair,MajorColorNames[Pair->majorColor], MinorColorNames[Pair->minorColor]);
 		numberpair++;
 		
 	}
