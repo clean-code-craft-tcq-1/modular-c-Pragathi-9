@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
-#include <colorcode.h>
+#include "colorcode.h"
 
 //This function extracts the color-pairs from the requested pair number
 ColorPair GetColorFromPairNumber(int RequestedPairNumber)
