@@ -89,7 +89,7 @@ void reference_manual()
 	while (numberpair <= MAX_COLORPAIR_NAME_CHARS)
 	{
 		ColorPair Pair = GetColorFromPairNumber(numberpair);
-    		ColorPairToString(&colorPair, colorPairNames);
+    		ColorPairToString(&Pair, colorPairNames);
 		printf(" %d \t\t\t\t\t %s\n ",numberpair,colorPairNames);
 		numberpair++;
 		
