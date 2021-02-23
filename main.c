@@ -38,7 +38,7 @@ void testNumberToPair(int RequestedPairNumber, enum MajorColor expectedMajor, en
 //This function extracts the Pair number from the requested color-pairs
 int GetPairNumberFromColor(const ColorPair* PairNumberfromColor) 
 {
-    return (PairNumberfromColor->majorColor * numberOfMinorColors + colorPair->minorColor + 1);
+    return (PairNumberfromColor->majorColor * numberOfMinorColors + PairNumberfromColor->minorColor + 1);
 }
 
 void testPairToNumber(enum MajorColor RequestedMajor, enum MinorColor RequestedMinor, int expectedPairNumber)
@@ -63,7 +63,7 @@ void reference_manual()
    {
      ColorPair DisplayManual = GetColorFromPairNumber(PairNumber);
      ColorPairToString(&DisplayManual, StoreColorPair);
-     printf(" %d \t\t\t\t\t %s\n ", numberpair,colorPairNames);
+     printf(" %d \t\t\t\t\t %s\n ", PairNumber,StoreColorPair);
      PairNumber++;
 		
    }	
