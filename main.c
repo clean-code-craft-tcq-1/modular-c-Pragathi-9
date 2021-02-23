@@ -84,12 +84,13 @@ void reference_manual()
 {
 	ColorPair Pair;
 	int numberpair = 1;
+	char colorPairNames[MAX_COLORPAIR_NAME_CHARS];
 	printf(" PAIRNUMBER \t\t\t\t\t MAJORCOLOR-MINORCOLOR ");
 	while (numberpair <= MAX_COLORPAIR_NAME_CHARS)
 	{
 		ColorPair Pair = GetColorFromPairNumber(numberpair);
-		
-		printf(" %d \t\t\t\t\t %s-%s ",numberpair,MajorColorNames[Pair->majorColor], MinorColorNames[Pair->minorColor]);
+    		ColorPairToString(&colorPair, colorPairNames);
+		printf(" %d \t\t\t\t\t %s\n ",numberpair,colorPairNames);
 		numberpair++;
 		
 	}
