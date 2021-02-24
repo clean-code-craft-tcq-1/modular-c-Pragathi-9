@@ -6,15 +6,15 @@
 // This function prints the reference manaul that maps the color-names to the corresponding numbers 
 void reference_manual()
 {
-  ColorPair DisplayManual;
+  ColorPair Display;
   int PairNumber = 1;
   char StoreColorPair[MAX_COLORPAIR_NAME_CHARS];
   printf(" PAIRNUMBER \t\t\t\t MAJORCOLOR-MINORCOLOR\n ");
 	
   while (PairNumber <= MAX_COLORPAIR_NAME_CHARS)
    {
-     ColorPair DisplayManual = GetColorFromPairNumber(PairNumber);
-     ColorPairToString(&DisplayManual, StoreColorPair);
+     Display = GetColorFromPairNumber(PairNumber);
+     ColorPairToString(&Display, StoreColorPair);
      printf(" %d \t\t\t\t\t %s\n ", PairNumber,StoreColorPair);
      PairNumber++;
 		
