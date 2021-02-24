@@ -10,24 +10,24 @@ typedef struct {
 } ColorPair; 
 
 
-extern const char* MajorColorNames[] = {
+const char* MajorColorNames[] = {
     "White", "Red", "Black", "Yellow", "Violet"
 };
 
 //Calculate number of Major colors
-extern int numberOfMajorColors = sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
+int numberOfMajorColors = sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
 
 
-extern const char* MinorColorNames[] = 
+const char* MinorColorNames[] = 
 {
    "Blue", "Orange", "Green", "Brown", "Slate"
 };
 
 //Calculate number of minor colors
-extern int numberOfMinorColors = sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
+int numberOfMinorColors = sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
 
-extern const int MAX_COLORPAIR_NAME_CHARS = 25;
-extern const int MIN_COLORPAIR_NAME_CHARS = 1;
+const int MAX_COLORPAIR_NAME_CHARS = 25;
+const int MIN_COLORPAIR_NAME_CHARS = 1;
 
 //function declaration
 
