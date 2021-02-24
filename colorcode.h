@@ -4,7 +4,7 @@
 enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
 enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
 
-extern typedef struct {
+typedef struct {
     enum MajorColor majorColor;
     enum MinorColor minorColor;
 } ColorPair; 
@@ -31,9 +31,9 @@ extern const int MIN_COLORPAIR_NAME_CHARS = 1;
 
 //function declaration
 
-extern ColorPair GetColorFromPairNumber(int);
-extern void ColorPairToString(const ColorPair* ExtractColorPair, char* buffer);
-extern void testNumberToPair(int, enum MajorColor expectedMajor, enum MinorColor expectedMinor);
-extern int GetPairNumberFromColor(const ColorPair* PairNumberfromColor );
-extern void testPairToNumber(enum MajorColor RequestedMajor, enum MinorColor RequestedMinor, int);
-extern void reference_manual();
+ColorPair GetColorFromPairNumber(int);
+void ColorPairToString(const ColorPair* ExtractColorPair, char* buffer);
+void testNumberToPair(int, enum MajorColor expectedMajor, enum MinorColor expectedMinor);
+int GetPairNumberFromColor(const ColorPair* PairNumberfromColor );
+void testPairToNumber(enum MajorColor RequestedMajor, enum MinorColor RequestedMinor, int);
+void reference_manual();
