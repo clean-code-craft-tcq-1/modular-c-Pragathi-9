@@ -31,7 +31,7 @@ void testNumberToPair(int RequestedPairNumber, enum MajorColor expectedMajor, en
     char colorPairNames[MAX_COLORPAIR_NAME_CHARS];
     ColorPairToString(&ExtractColorPair, colorPairNames);
     assert(ExtractColorPair.majorColor == expectedMajor);
-    assert(ExtractColorPair.minorColor == expectedMinor)
+    assert(ExtractColorPair.minorColor == expectedMinor);
     printf("Got pair %s\n", colorPairNames);
     
 }
