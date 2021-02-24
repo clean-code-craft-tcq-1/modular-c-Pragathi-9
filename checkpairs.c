@@ -30,10 +30,10 @@ void testNumberToPair(int RequestedPairNumber, enum MajorColor expectedMajor, en
     ColorPair ExtractColorPair = GetColorFromPairNumber(RequestedPairNumber);
     char colorPairNames[MAX_COLORPAIR_NAME_CHARS];
     ColorPairToString(&ExtractColorPair, colorPairNames);
-    if ((assert(ExtractColorPair.majorColor == expectedMajor)) && (assert(ExtractColorPair.minorColor == expectedMinor)))
-    {
-       printf("Got pair %s\n", colorPairNames);
-    }
+    assert(ExtractColorPair.majorColor == expectedMajor);
+    assert(ExtractColorPair.minorColor == expectedMinor)
+    printf("Got pair %s\n", colorPairNames);
+    
 }
 
 //This function extracts the Pair number from the requested color-pairs
@@ -48,8 +48,6 @@ void testPairToNumber(enum MajorColor RequestedMajor, enum MinorColor RequestedM
     ExtractPairNumber.majorColor = RequestedMajor;
     ExtractPairNumber.minorColor = RequestedMinor;
     int ExtractedPairNumber = GetPairNumberFromColor(&ExtractPairNumber);
-    if (assert(ExtractedPairNumber == expectedPairNumber))
-    {
-       printf("Got pair number %d\n", ExtractedPairNumber);
-    }
+    assert(ExtractedPairNumber == expectedPairNumber);
+    printf("Got pair number %d\n", ExtractedPairNumber);
 }
